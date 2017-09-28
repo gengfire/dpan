@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "dpan",
+  "description": "get baiduyun real download link.  ©2017 Gengfire",
+  "version": "1.1.6",
+  "icons": {
+    "16": "/img/icon.png",
+    "48": "/img/icon.png",
+    "128": "/img/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "/img/icon.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "webRequest",
+    "https://d.pcs.baidu.com/"
+  ],
+  "content_scripts": [{
+    "matches": ["*://pan.baidu.com/*"],
+    "js": ["js/zepto.js", "js/index.js"],
+    "run_at" : "document_end",
+    "all_frames" : true
+  }]
+}
